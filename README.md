@@ -156,9 +156,13 @@ Website files will be generated under `_site/`.
 $ bundle exec jekyll serve
 ```
 
-
 ## License
 This software is released under the MIT License, see LICENSE.
 
 This project includes [PhotoSwipe](https://photoswipe.com/),
 Please See https://github.com/dimsemenov/PhotoSwipe/blob/master/LICENSE
+
+## Example Settings and Website
+You can see example settings at https://github.com/PG-MANA/TilePhotoViewExample , and how it works at https://soft.taprix.org/web/tile_photo_view/
+
+<img src="https://user-images.githubusercontent.com/35759887/184500157-9ecec99d-fa03-4d25-a7c3-0010135b49cb.png" style="width: 40%; top: 0;" /><img src="https://user-images.githubusercontent.com/35759887/184500173-ff294628-d791-4bfb-a18c-c0c30c31569d.png" style="width: 40%; top: 0;" />
