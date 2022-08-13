@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#FFFFFFFF"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="description" content="{{ site.description }}"/>
+    <meta property="og:description" content="{{ site.description }}"/>
+    <meta property="og:site_name" content="{{ site.title }}"/>
+    <meta property="twitter:description" content="{{ site.description }}"/>
+    <meta property="twitter:site_name" content="{{ site.title }}"/>
+    {% if page.title %}
+        <meta property="og:title" content="{{ page.title | upcase }} | {{ site.title }}"/>
+        <meta property="twitter:title" content="{{ page.title | upcase }} | {{ site.title }}"/>
+        <title>{{ page.title | upcase }} | {{ site.title }}</title>
+    {% else %}
+        <meta property="og:title" content="{{ site.title }}"/>
+        <meta property="twitter:title" content="{{ site.title }}"/>
+        <title>{{ site.title }}</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/photoswipe.css' | relative_url }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ '/assets/css/common.css' | relative_url }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ '/assets/css/gallery_tile.css' | relative_url }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" type="text/css"
+          media="(max-width: 999px)"/>
+    <link rel="stylesheet" href="{{ '/assets/css/wide.css' | relative_url }}" type="text/css"
+          media="(min-width: 1000px)"/>
+    {% for e in site.custom_css.relative %}
+        <link rel="stylesheet" href="{{ '/assets/css/custom/' | relative_url }}{{ e }}" type="text/css"/>
+    {% endfor %}
+    {% for e in site.custom_css.absolute %}
+        <link rel="stylesheet" href="{{ e }}" type="text/css"/>
+    {% endfor %}
+    <script type="module" src="{{ '/assets/js/module.js' | relative_url }}" async></script>
+    <script src="{{ '/assets/js/image_fadein.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}" async></script>
+    {% for e in site.custom_js.relative %}
+        <script src="{{ '/assets/js/custom/' | relative_url }}{{ e }}" async></script>
+    {% endfor %}
+    {% for e in site.custom_js.absolute %}
+        <script src="{{ e }}" async></script>
+    {% endfor %}
+</head>
+<body>
+<div>
+    <h1><a href="{{ '/' | relative_url }}" style="text-decoration: none;">{{ site.title }}</a></h1>
+</div>
+<div class="header">
+    <header id="main_header">
+        <div><!-- Padding --></div>
+        {% if page.title %}
+            <h2>{{ page.title | upcase }}</h2>
+        {% else %}
+            <h2>HOME</h2>
+        {% endif %}
+        <div>
+            <input type="checkbox" id="menu_open"/>
+            <label for="menu_open" id="menu_icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <div class="menu-list" ontouchstart="">
+                <ul>
+                    {% for c in site.data.scene.scenes %}
+                        <li><a href="{{ '/scene/' | relative_url }}{{ c }}.html">{{ c | upcase }}</a></li>
+                    {% endfor %}
+                    {% for e in site.pages %}
+                        {% if e.show_in_menu %}
+                            <li><a href="{{ e.url | relative_url }}">{{ e.title | upcase }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </header>
+</div>
+<main>
+    {{ content }}
+</main>
+<footer class="footer">Copyright &copy 2021 {{ site.author.name }} All Rights Reserved.</footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+*.gem
+.bundle
+.jekyll-cache
+.sass-cache
+_site
+Gemfile.lock
+.github
+
+/assets/js/custom/
+/assets/css/custom/
+/assets/images/upload/
+#/assets/images/upload/*/thumbnail/

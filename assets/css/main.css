@@ -1,0 +1,149 @@
+/* Header */
+div.header > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;    min-height: 60px;
+    color: var(--main-background-color);
+}
+
+/* Menu */
+#menu_icon {
+    position: fixed;
+    right: 20px;
+    top: 70px;
+    opacity: 1;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    z-index: 5;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.75);
+    transition: background-color 0.3s linear 0s, opacity 0.3s linear 0s;
+    border-radius: 10%;
+}
+
+#menu_icon > div {
+    position: absolute;
+    background-color: black;
+    height: 5%;
+    width: 40%;
+    margin: auto;
+    transition: all 0.3s linear 0s;
+}
+
+#menu_icon > div:nth-child(1) {
+    top: 35%;
+}
+
+#menu_icon > div:nth-child(2) {
+    top: 50%;
+}
+
+#menu_icon > div:nth-child(3) {
+    top: 65%;
+}
+
+#menu_open {
+    display: none;
+}
+
+#menu_open:checked + #menu_icon {
+    background-color: transparent;
+}
+
+#menu_open:checked + #menu_icon > div:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+    transform-origin: center center;
+}
+
+#menu_open:checked + #menu_icon > div:nth-child(2) {
+    background-color: transparent;
+}
+
+#menu_open:checked + #menu_icon > div:nth-child(3) {
+    top: 50%;
+    transform: rotate(-45deg);
+    transform-origin: center center;
+}
+
+#menu_open:checked ~ .menu-list {
+    right: 0;
+}
+
+.menu-list {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 4;
+    background-color: rgba(205, 205, 205, 0.8);
+    transition: all 0.3s;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+
+}
+.menu-list -webkit-scrollbar {
+    width: 5px;
+}
+
+-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.menu-list > ul {
+    padding-left: 4px;
+    padding-top: 120px;
+    list-style-type: none;
+}
+
+.menu-list > ul > li > a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 0.7em;
+}
+
+.menu-list > ul > li > a:hover {
+    background-color: gray;
+}
+
+/* Gallery */
+div.gallery {
+    width: calc(100% - 4px);
+    margin: 0 2px;
+}
+
+div.pswp-gallery > div > a > img {
+    object-fit: cover;
+    object-position: center center;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 200%;
+    max-height: 200%;
+}
+
+div.pswp-gallery > div > a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.2s linear;
+}
+
+div.full-width-img img {
+    width: calc(100vw - 4px);
+    vertical-align: bottom;
+    margin: 1px 2px 1px 2px;
+    border: 0;
+}
+

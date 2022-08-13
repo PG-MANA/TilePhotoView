@@ -1,0 +1,60 @@
+---
+layout: default
+---
+<div class="gallery">
+    <div class="pswp-gallery" id="gallery--cropped-thumbs" ontouchstart="">
+        {% for e in page.entries %}
+            <div><a href="{{ '/assets/images/upload/' | relative_url }}{{ e.image_large }}" target="_blank"
+                    data-pswp-width="{{ e.image_large_width }}"
+                    data-pswp-height="{{ e.image_large_height }}"
+                    data-cropped="true">
+                    <img src="{{ '/assets/images/upload/' | relative_url }}{{ e.image_small }}"
+                         alt="{{ e.alt }}"/>
+                    {% if e.description %}
+                        <span class="description">{{ e.description }}</span>
+                    {% endif %}
+                </a></div>
+        {% endfor %}
+    </div>
+</div>
+
+{% if page.current_page_number %}
+    <div class="next-link">
+        <ul>
+            {% if page.current_page_number > 1 %}
+                <li class="next-link-not-current"><a href="{{ page.scene }}.html">1</a></li>
+            {% endif %}
+            {% if page.current_page_number > 3 %}
+                <li><span class="next-link-dots">...</span></li>
+            {% endif %}
+            {% if page.current_page_number > 2 %}
+                <li class="next-link-not-current"><a
+                            href="{{ page.scene }}{{ page.current_page_number | minus: 1 }}.html">{{ page.current_page_number | minus: 1 }}</a>
+                </li>
+            {% endif %}
+            {% if page.current_page_number == 1 %}
+                <li class="next-link-current"><a
+                            href="{{ page.scene }}.html">{{ page.current_page_number }}</a></li>
+            {% else %}
+                <li class="next-link-current"><a
+                            href="{{ page.scene }}{{ page.current_page_number }}.html">{{ page.current_page_number }}</a>
+                </li>
+            {% endif %}
+
+            {% assign next_page_number = page.current_page_number | plus: 1 %}
+            {% if next_page_number < page.max_page_number %}
+                <li class="next-link-not-current"><a
+                            href="{{ page.scene }}{{ next_page_number }}.html">{{ next_page_number }}</a>
+                </li>
+            {% endif %}
+            {% assign next_next_page_number = next_page_number | plus: 1 %}
+            {% if next_next_page_number < page.max_page_number %}
+                <li><span class="next-link-dots">...</span></li>
+            {% endif %}
+            {% if page.current_page_number != page.max_page_number %}
+                <li class="next-link-not-current"><a
+                            href="{{ page.scene }}{{ page.max_page_number }}.html">{{ page.max_page_number }}</a></li>
+            {% endif %}
+        </ul>
+    </div>
+{% endif %}

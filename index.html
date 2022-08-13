@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+<div class="full-width-img" ontouchstart="">
+  {% for c in site.data.scene.scenes %}
+  <a href="{{ '/scene/' | relative_url }}{{ c }}.html"><img src="{{ '/assets/images/upload/' | relative_url }}{{ c }}.jpg"
+                                       alt="The top image of category:{{ c }}" class="gray-scale"/></a>
+  {% endfor %}
+</div>

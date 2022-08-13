@@ -1,0 +1,10 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    {% for e in page.entries %}
+        <url>
+            <loc>{{ site.url }}{{ e.url | relative_url }}</loc>
+            <priority>{{ e.priority }}</priority>
+            <changefreq>{{ e.changefreq }}</changefreq>
+        </url>
+    {% endfor %}
+</urlset>

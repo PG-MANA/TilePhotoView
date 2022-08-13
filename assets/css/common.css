@@ -1,0 +1,132 @@
+:root {
+    --main-text-color: black;
+    --main-background-color: white;
+    --sub-text-color: white;
+    --sub-background-color: black;
+}
+
+body {
+    margin: 0;
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+}
+
+h1, h2 {
+    text-align: center;
+    color: var(--main-text-color);
+}
+
+h1 > a, h2 > a {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+img {
+    transition: opacity 0.5s linear;
+}
+
+img.gray-scale {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+}
+
+img.gray-scale:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+/* Header */
+div.header {
+    width: 100%;
+}
+
+/* Gallery */
+.pswp-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--main-background-color);
+    opacity: 0;
+    color: var(--main-text-color);
+    padding: 2% 0;
+    /*visibility: hidden;*/
+    transition: opacity linear 0.5s;
+}
+
+.description:hover{
+    /*visibility: visible;*/
+    opacity: 0.6;
+}
+
+/* Next Link */
+.next-link {
+    width: 100%;
+}
+
+.next-link > ul {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 0 3px 0;
+}
+
+.next-link > ul > li {
+    display: inline-block;
+    border-radius: 2px / 2px;
+    margin: auto 2px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.next-link > ul > li > a {
+    text-decoration: none;
+    display: block;
+    width: 20px;
+    padding: 8px;
+}
+
+.next-link-current > a {
+    border: 1px #000 solid;
+    color: var(--sub-text-color);
+    background-color: var(--sub-background-color);
+}
+
+.next-link-not-current > a {
+    border: 1px #ccc solid;
+    color: var(--main-text-color);
+    background-color: var(--main-background-color);
+}
+
+.next-link-dots {
+    display: block;
+    width: 20px;
+    padding: 8px;
+    text-decoration: none;
+    border: 1px #ccc solid;
+    color: var(--sub-text-color);
+}
+
+footer {
+    color: var(--main-text-color);
+}
+
+footer.footer {
+    text-align: center;
+    font-size: 9px;
+    height: 27px;
+    font-style: oblique;
+    padding-top: 30px;
+    padding-bottom: 5px;
+}
