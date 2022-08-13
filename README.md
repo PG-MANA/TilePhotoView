@@ -2,7 +2,8 @@
 The photo gallery powered by [jekyll](https://jekyllrb.com/) and [PhotoSwipe](https://photoswipe.com/).
 
 ## Screen Shot
-![Screen Shot](https://user-images.githubusercontent.com/35759887/184500982-6e455762-6881-4dd6-9215-12e8fdcca437.png)
+![Screen Shot](https://user-images.githubusercontent.com/35759887/184501038-482ed48e-522f-4ceb-a6a8-74b1078be69e.png)
+
 You can see example settings at https://github.com/PG-MANA/TilePhotoViewExample , and how it works at https://soft.taprix.org/web/tile_photo_view/
 
 ## How to configure
