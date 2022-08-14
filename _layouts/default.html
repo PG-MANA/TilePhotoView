@@ -62,6 +62,7 @@
             </label>
             <div class="menu-list" ontouchstart="">
                 <ul>
+                    <li><a href="{{ '/' | relative_url }}index.html">HOME</a></li>
                     {% for c in site.data.scene.scenes %}
                         <li><a href="{{ '/scene/' | relative_url }}{{ c }}.html">{{ c | upcase }}</a></li>
                     {% endfor %}
