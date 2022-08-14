@@ -41,8 +41,16 @@ module Jekyll
       entries.each do |e|
         if e['image_large_width'] == nil or e['image_large_height'] == nil or e['image_small'] == nil
           img = Magick::Image::read(File.join(@base, 'assets', 'images', 'upload', e['image_large'])).first
-          e['image_large_width'] = img.columns
-          e['image_large_height'] = img.rows
+          if img.orientation == Magick::LeftTopOrientation or
+            img.orientation == Magick::RightTopOrientation or
+            img.orientation == Magick::RightBottomOrientation or
+            img.orientation == Magick::LeftBottomOrientation
+            e['image_large_width'] = img.rows
+            e['image_large_height'] = img.columns
+          else
+            e['image_large_width'] = img.columns
+            e['image_large_height'] = img.rows
+          end
 
           if e['image_small'] == nil
             image_small_dir = File.join(File.dirname(e['image_large']), 'thumbnail')
