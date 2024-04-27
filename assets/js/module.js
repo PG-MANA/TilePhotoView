@@ -1,11 +1,12 @@
-import PhotoSwipeLightbox from './photoswipe-lightbox.esm.js';
+import PhotoSwipeLightbox from './photoswipe-lightbox.esm.min.js';
+import PhotoSwipe from './photoswipe.esm.min.js';
 
 const lightbox = new PhotoSwipeLightbox({
   gallery: '#gallery--cropped-thumbs',
   children: 'a',
   showHideAnimationType: 'zoom',
   bgOpacity: 0.95,
-  pswpModule: () => import('./photoswipe.esm.js'),
+  pswpModule: PhotoSwipe,
 });
 
 
